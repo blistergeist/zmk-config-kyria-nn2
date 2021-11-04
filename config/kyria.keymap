@@ -5,26 +5,221 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+//Layer definitions
+#define QWERTY 0
+#define COLEMAK 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
+#define AOE 6
+#define AOERAISE 7
+#define MINE 8
+#define MINERAISE 9
+#define ADJUST 10
 
 / {
-	keymap {
-		compatible = "zmk,keymap";
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp SQT>;
+            layers = <QWERTY COLEMAK>;
+        };
+    };
+    behaviors {
+        mt_s: ctrl_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_CTRL_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            quick_tap_ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+        mt_l: alt_gui {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_ALT_GUI";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
 
-		default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
-			bindings = <
-	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
-			>;
+    keymap {
+            compatible = "zmk,keymap";
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
-	};
+            qwerty {
+// GASC home row mods. Layer key mods. Mod tap for zxcv. Mod tap for backspace/shift
+// ----------------------------------------------  ------------------------------------------------
+// |    |  Q  |  W  |  E  |  R  |  T  |                         |  Y  |  U  |  I  |  O  |  P  |      |
+// |    |  A  |  S  |  D  |  F  |  G  |                         |  H  |  J  |  K  |  L  |  ;  |  '   |
+// |    |  Z  |  X  |  C  |  V  |  B  |    |    |  |    |    |  N  |  M  |  ,  |  .  |  /  | CAPS |
+//                  |  PP | TAB | NUM | PSC|    |  | FUN| SFT| SYM | ENT | MUTE|
+//                              | ESC | SPC| NAV|  |    | BSP| DEL |
+
+        bindings = <
+    &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       /**/                            &kp Y           &mt_l LC(U) U   &mt_l LC(I) I  &kp O        &kp P           &none
+    &none   &mt_l LGUI A    &mt_l LALT S    &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               /**/                            &kp H           &mt_s LCTRL J   &mt_s LSHFT K  &mt_l LALT L &mt_l LGUI SEMI &kp SQT
+    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp PSCRN    &none  /**/    &none   &none           &mt_l LC(N) N   &kp M           &kp COMMA      &kp DOT      &kp FSLH        &kp CAPS
+                                            &kp C_PP        &kp TAB         &lt NUM ESC     &kp SPACE   &mo NAV /**/    &mo FUN &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
+                        >;
+            };
+
+            colemak {
+// GASC home row mods. Layer key mods. Mod tap for zxcv. Mod tap for backspace/shift
+// ----------------------------------------------  ------------------------------------------------
+// |    |  Q  |  W  |  F  |  P  |  G  |                       |  J  |  L  |  U  |  Y  |  ;  |      |
+// |    |  A  |  R  |  S  |  T  |  D  |                       |  H  |  N  |  E  |  I  |  O  |  '   |
+// |    |  Z  |  X  |  C  |  V  |  B  |     |    |  |    |    |  K  |  M  |  ,  |  .  |  /  | CAPS |
+//                        | TAB | NUM |     |    |  |    | SFT| SYM | ENT | MUTE|
+//                              | ESC | SPC | NAV|  | FUN| BSP| DEL |
+
+        bindings = <
+    &none   &kp Q          &mt_l LC(W) W    &kp F           &kp P           &kp G                                   /**/                            &kp J           &kp L           &kp U           &kp Y        &kp SEMI       &none
+    &none   &mt_l LGUI A   &mt_l LALT R     &mt_s LSHFT S   &mt_s LCTRL T   &kp D                                   /**/                            &kp H           &mt_s LCTRL N   &mt_s LSHFT E   &mt_l LALT I &mt_l LGUI O   &kp SQT
+    &none   &mt_l LC(Z) Z  &mt_l LC(X) X    &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp PSCRN    &none      /**/    &none   &none           &kp K           &kp M           &kp COMMA       &kp DOT      &kp FSLH       &kp CAPS
+                                            &kp TAB         &lt NUM ESC     &lt NAV SPACE   &kp SPACE    &mo NAV    /**/    &mo FUN &mt LSHFT BSPC  &lt FUN BSPC    &lt SYM DEL     &kp ENTER
+                        >;
+            };
+
+            num {
+// ----------------------------------------------------  --------------------------------------------------------
+// |       |     |     |      |      |      |                      |  +   |  7    |  8    |  9   |   *   |      |
+// |       |     |     |      |      |      |                      |  =   |  4    |  5    |  6   |   |   |      |
+// |       |     |     |      |      |      |    |    |  |    |    |  -   |  1    |  2    |  3   |   \   |      |
+//                     |      |      |      |    |    |  |    |  0 | ADJ/.|       |       |
+
+        bindings = <
+    &none   &none       &none       &none       &none       &none                   /**/                    &kp PLUS        &kp N7  &kp N8  &kp N9  &kp STAR    &none
+    &none   &kp LGUI    &kp LALT    &kp LSHFT   &kp LCTRL   &none                   /**/                    &kp EQUAL       &kp N4  &kp N5  &kp N6  &kp PIPE    &none
+    &none   &none       &none       &none       &none       &none   &none   &none   /**/    &none    &none  &kp MINUS       &kp N1  &kp N2  &kp N3  &kp BSLH    &none
+                                    &none       &trans      &none   &none   &none   /**/    &none    &kp N0 &lt ADJUST DOT  &none   &none
+                        >;
+            };
+
+            nav {
+// ----------------------------------------------------  --------------------------------------------------------
+// |       |     |     |      |      |      |                      |  {   |   (   |   )   |  [   |   ]   |      |
+// |       |     |     |      |      |      |                      |  }   |  LEFT |  DOWN |  UP  | RIGHT |      |
+// |       |     |     |      |      |      |    |    |  |    |    |      |  HOME |  PGDN | PGUP |  END  |      |
+//                     |      |      |      |    |    |  |    |    |      |       |       |      |
+
+        bindings = <
+    &none   &none       &none       &none       &none       &none                   /**/                    &kp LBRC    &kp LPAR    &kp RPAR    &kp LBKT    &kp RBKT    &none
+    &none   &kp LGUI    &kp LALT    &kp LSHFT   &kp LCTRL   &none                   /**/                    &kp RBRC    &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
+    &none   &none       &none       &none       &none       &none   &none   &none   /**/    &none    &none  &none       &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
+                                    &none       &none       &trans  &none    &none  /**/    &none    &none  &mo ADJUST  &none       &none
+                        >;
+            };
+
+            sym {
+// ----------------------------------------------------  --------------------------------------------------------
+// |       |  !  |  @  |  #   |  $   |  %   |                      |      |       |       |      |       |      |
+// |       |  ^  |  &  |  _   |  `   |  ~   |                      |      |       |       |      |       |      |
+// |       |     |     |      |      |      |    |    |  |    |    |      |       |       |      |       |      |
+//                     |      |      |      |    |    |  |    |    |      |       |       |
+
+        bindings = <
+    &none   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT                   /**/                    &none   &none       &none       &none       &none       &none
+    &none   &kp CARET   &kp AMPS    &kp UNDER   &kp GRAVE   &kp TILDE                   /**/                    &none   &kp LCTRL   &kp LSHFT   &kp LALT    &kp LGUI    &none
+    &none   &none       &none       &none       &none       &none       &none    &none  /**/    &none    &none  &none   &none       &none       &none       &none       &none
+                                    &none       &none       &mo ADJUST  &none    &none  /**/    &none    &none  &trans  &none       &none
+                        >;
+            };
+
+            fun {
+// ----------------------------------------------------  --------------------------------------------------------
+// |       |  F1 |  F2 |  F3  |  F4  |      |                      |      |       |       |      |       |      |
+// |       |  F5 |  F6 |  F7  |  F8  |      |                      |      |       |       |      |       |      |
+// |       |  F9 |  F10|  F11 |  F12 |      |    |    |  |    |    |      |       |       |      |       |      |
+//                     |      |      |      |    |    |  |    |    |      |       |       |
+
+        bindings = <
+    &none   &kp F1  &kp F2  &kp F3  &kp F4  &none                       /**/                    &none   &none       &none       &none       &none       &none
+    &none   &kp F5  &kp F6  &kp F7  &kp F8  &none                       /**/                    &none   &kp LCTRL   &kp LSHFT   &kp LALT    &kp LGUI    &none
+    &none   &kp F9  &kp F10 &kp F11 &kp F12 &none       &none   &none   /**/    &none    &none  &none   &none       &none       &none       &none       &none
+                            &none   &none   &mo ADJUST  &none   &none   /**/    &none    &none  &trans  &none       &none
+                        >;
+            };
+
+            aoe {
+// -----------------------------------------------  -----------------------------------------------
+// | ESC |  Q  |  W  |  E  |  R  |  T  |                      |  Y  |  U  |  I  |  O  |  P  | BSPC|
+// | ALT |  A  |  S  |  D  |  F  |  G  |                      |  H  |  J  |  K  |  L  |  ;  |  '  |
+// | CTRL|  Z  |  X  |  C  |  V  |  B  |    |    |  |    |    |  N  |  M  |  ,  |  .  |  /  | CAPS|
+//                   | TAB | AOER|SH/SP|    |    |  |    |    |LSHFT| XXX |ENTER|
+
+        bindings = <
+    &kp LCTRL   &kp Q   &kp W   &kp E   &kp R   &kp T                                       /**/                            &kp Y   &kp U       &kp I       &kp O   &kp P       &kp BSPC
+    &kp LALT    &kp A   &kp S   &kp D   &kp F   &kp G                                       /**/                            &kp H   &kp J       &kp K       &kp L   &kp SEMI    &kp SQT
+    &none       &kp Z   &kp X   &kp C   &kp V   &kp B               &kp F3      &none       /**/    &none   &none           &kp N   &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp CAPS
+                                &kp F5  &kp TAB &lt AOERAISE ESC    &kp SPACE   &kp LSHFT   /**/    &none   &mt LSHFT BSPC  &kp DEL &kp ENTER   &none
+                    >;
+            };
+            aoeraise {
+// -----------------------------------------------  -----------------------------------------------
+// |  0  |  1  |  2  |  3  |  4  |  5  |                      |     |     |     |     |     |     |
+// |LS(0)|LS(1)|LS(2)|LS(3)|LS(4)|LS(5)|                      |     |     |     |     |     |     |
+// |SC(G)|SC(Q)|SC(W)|SC(E)|SC(R)|SC(T)|    |    |  |    |    |     |     |     |     |     |     |
+//                   |     |     |     |    |    |  |    |    |     | ADJ |     |
+
+        bindings = <
+    &kp N0          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                          /**/                    &trans      &trans  &trans  &trans  &trans  &trans
+    &kp LS(N0)      &kp LS(N1)      &kp LS(N2)      &kp LS(N3)      &kp LS(N4)      &kp LS(N5)                      /**/                    &trans      &trans  &trans  &trans  &trans  &trans
+    &kp LS(LC(G))   &kp LS(LC(Q))   &kp LS(LC(W))   &kp LS(LC(E))   &kp LS(LC(R))   &kp LS(LC(T))   &none    &none  /**/    &none   &none   &trans      &trans  &trans  &trans  &trans  &trans
+                                                    &trans          &trans          &trans          &none    &none  /**/    &none   &none   &mo ADJUST  &trans  &none
+                    >;
+            };
+            mine {
+// -----------------------------------------------  -----------------------------------------------
+// |  `  |  Q  |  W  |  E  |  R  |  T  |                      |  Y  |  U  |  I  |  O  |  P  | BSPC|
+// | CTRL|  A  |  S  |  D  |  F  |  G  |                      |  H  |  J  |  K  |  L  |  ;  |  '  |
+// |  @  |  Z  |  X  |  C  |  V  |  B  |    |    |  |    |    |  N  |  M  |  ,  |  .  |  /  | CAPS|
+//                   |SHIFT| MNRS|SPACE|    |    |  |    |    |LSHFT| XXX |ENTER|
+
+        bindings = <
+    &kp LCTRL           &kp Q   &kp W   &kp E       &kp R   &kp T                                       /**/                            &kp Y   &kp U       &kp I       &kp O       &kp P       &none
+    &kp LALT            &kp A   &kp S   &kp D       &kp F   &kp G                                       /**/                            &kp H   &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
+    &mt LC(GRAVE) GRAVE &kp Z   &kp X   &kp C       &kp V   &kp B               &kp F3      &none       /**/    &none    &none          &kp N   &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp CAPS
+                                        &kp F5      &kp TAB &lt MINERAISE ESC   &kp SPACE   &kp LSHFT   /**/    &none    &mt LSHFT BSPC &kp DEL &kp ENTER   &kp C_MUTE
+                    >;
+            };
+            mineraise {
+// -----------------------------------------------  -----------------------------------------------
+// |     |  1  |  2  |  3  |  4  |  5  |                      |     |     |     |     |     |     |
+// |     |  6  |  7  |  8  |  9  |  0  |                      |     |     |     |     |     |     |
+// |     |  F1 |  F2 |  F3 |  F4 |  F5 |    |    |  |    |    |     |     |     |     |     |     |
+//                   |     |     |     |    |    |  |    |    |     | ADJ |     |
+
+        bindings = <
+    &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                  /**/                    &trans      &trans  &trans  &trans  &trans  &trans
+    &trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0                  /**/                    &trans      &trans  &trans  &trans  &trans  &trans
+    &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &none   &none   /**/    &none    &none  &trans      &trans  &trans  &trans  &trans  &trans
+                            &none   &trans  &trans  &trans  &none   /**/    &none    &none  &mo ADJUST  &trans  &trans
+                    >;
+            };
+            adjust {
+// -----------------------------------------------  -----------------------------------------------
+// |RESET|     |     |     |     |     |                      |     |     |     |     |     |     |
+// |     |     |BTCLR| BT1 | BT2 |SG(L)|                      |SG(R)|LG(L)|LG(D)|LG(U)|LG(R)|     |
+// |PSCRN|     |     |     | AOE | MINE|    |    |  |    |    |COLEM|QWERT|     |     |     |     |
+//                   |     |     |     |    |    |  |    |    |     |     |     |
+
+        bindings = <
+    &bootloader &none   &none       &none           &none           &none                                   /**/                        &none               &none           &none           &none       &none           &none
+    &none       &none   &bt BT_CLR  &bt BT_SEL 1    &bt BT_SEL 2    &kp LG(LS(LEFT))                        /**/                        &kp LG(LS(RIGHT))   &kp LG(LEFT)    &kp LG(DOWN)    &kp LG(UP)  &kp LG(RIGHT)   &none
+    &none       &none   &none       &none           &to AOE         &to MINE            &trans    &none     /**/    &none   &to QWERTY  &none               &none           &none           &none       &none           &none
+                                    &none           &trans          &trans              &trans    &trans    /**/    &trans  &trans      &trans              &trans          &none
+            >;
+        };
+    };
 };
