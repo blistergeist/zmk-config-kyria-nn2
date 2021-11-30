@@ -55,6 +55,12 @@
             bindings = <&kp LALT>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <31 44>;
+            bindings = <&kp ESC>;
+            // layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
     };
     behaviors {
         mt_s: ctrl_shift {
