@@ -57,8 +57,14 @@
         };
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <31 44>;
+            key-positions = <30 43>;
             bindings = <&kp ESC>;
+            // layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_prsc {
+            timeout-ms = <50>;
+            key-positions = <31 44>;
+            bindings = <&kp PSCRN>;
             // layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_lpar {
@@ -103,14 +109,14 @@
 // ----------------------------------------------  ------------------------------------------------
 // |    |  Q  |  W  |  E  |  R  |  T  |                      |  Y  |  U  |  I  |  O  |  P  |      |
 // |    |  A  |  S  |  D  |  F  |  G  |                      |  H  |  J  |  K  |  L  |  ;  |  '   |
-// |    |  Z  |  X  |  C  |  V  |  B  | PSC| VDN|  | VUP|    |  N  |  M  |  ,  |  .  |  /  | CAPS |
+// |    |  Z  |  X  |  C  |  V  |  B  |    | VDN|  | VUP| OUT|  N  |  M  |  ,  |  .  |  /  | CAPS |
 //                  |  PP | TAB | NUM | SPC|    |  | FUN| SFT| SYM | ENT | MUTE|
-//                              | ESC |    | NAV|  |    | BSP| DEL |
+//                              |     |    | NAV|  |    | BSP| DEL |
 
         bindings = <
-    &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		/**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &kp O       &kp P       &none
-    &none   &kp A           &kp S           &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &mt_s LSHFT K   &kp L       &kp SEMI    &kp SQT
-    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp PSCRN   &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &out OUT_TOG    &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT     &kp FSLH    &kp CAPS
+    &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		/**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &mt_l LC(O) O   &kp P       &none
+    &none   &mt_l LC(A) A   &mt_l LC(S) S   &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &mt_s LSHFT K   &kp L           &kp SEMI    &kp SQT
+    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &none       &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &out OUT_TOG    &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT         &kp FSLH    &kp CAPS
                                             &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
             };
@@ -122,13 +128,13 @@
 // |    |  A  |  R  |  S  |  T  |  D  |                       |  H  |  N  |  E  |  I  |  O  |  '   |
 // |    |  Z  |  X  |  C  |  V  |  B  |     |    |  |    |    |  K  |  M  |  ,  |  .  |  /  | CAPS |
 //                        | TAB | NUM |     |    |  |    | SFT| SYM | ENT | MUTE|
-//                              | ESC | SPC | NAV|  | FUN| BSP| DEL |
+//                              |     | SPC | NAV|  | FUN| BSP| DEL |
 
         bindings = <    
     &none   &kp Q           &mt_l LC(W) W   &kp F           &kp P           &kp G                                       /**/                                    &kp J           &kp L           &kp U           &kp Y   &kp SEMI    &none
     &none   &kp A           &kp R           &mt_s LSHFT S   &mt_s LCTRL T   &kp D                                       /**/                                    &kp H           &mt_s LCTRL N   &mt_s LSHFT E   &kp I   &kp O       &kp SQT
-    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp PSCRN    &kp C_VOL_DN   /**/    &kp C_VOL_UP    &out OUT_TOG    &kp K           &kp M           &kp COMMA       &kp DOT &kp FSLH    &kp CAPS
-                                            &kp C_PP        &kp TAB         &mo NUM         &kp SPACE    &mo NAV        /**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
+    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &none       &kp C_VOL_DN    /**/    &kp C_VOL_UP    &out OUT_TOG    &kp K           &kp M           &kp COMMA       &kp DOT &kp FSLH    &kp CAPS
+                                            &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV         /**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
             };
 
@@ -149,14 +155,14 @@
 
             nav {
 // ----------------------------------------------------  --------------------------------------------------------
-// |       |     |     |      |      |      |                      |  {   |   (   |   )   |  [   |   ]   |      |
-// |       |     |     |      |      |      |                      |  }   |  LEFT |  DOWN |  UP  | RIGHT |      |
+// |       |     |     |      |      |      |                      |      |   [   |   ]   |  {   |   }   |      |
+// |       |     |     |      |      |      |                      |      |  LEFT |  DOWN |  UP  | RIGHT |      |
 // |       |     |     |      |      |      |    |    |  |    |    |      |  HOME |  PGDN | PGUP |  END  |      |
-//                     |      |      |      |    |    |  |    |  ( |  )   |       |       |      |
+//                     |      |      |      |    |    |  |    |  ( | ADJ/)|       |       |      |
 
         bindings = <
-    &none   &none   &none   &none       &none       &none                   /**/                        &kp LBRC        &kp LPAR    &kp RPAR    &kp LBKT    &kp RBKT    &none
-    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                        &kp RBRC        &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
+    &none   &none   &none   &none       &none       &none                   /**/                        &none           &kp LBKT    &kp RBKT    &kp LBRC    &kp RBRC    &none
+    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                        &none           &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
     &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none    &none      &none           &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
                             &none       &none       &trans  &none   &none   /**/    &none    &kp LPAR   &lt ADJUST RPAR &none       &none
                         >;
