@@ -99,7 +99,7 @@
     &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		/**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &kp O       &kp P       &none
     &none   &kp A           &kp S           &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &mt_s LSHFT K   &kp L       &kp SEMI    &kp SQT
     &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp PSCRN   &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &out OUT_TOG    &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT     &kp FSLH    &kp CAPS
-                                            &kp C_PP        &kp TAB         &lt NUM ESC     &kp SPACE   &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
+                                            &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
             };
 
@@ -116,7 +116,7 @@
     &none   &kp Q           &mt_l LC(W) W   &kp F           &kp P           &kp G                                       /**/                                    &kp J           &kp L           &kp U           &kp Y   &kp SEMI    &none
     &none   &kp A           &kp R           &mt_s LSHFT S   &mt_s LCTRL T   &kp D                                       /**/                                    &kp H           &mt_s LCTRL N   &mt_s LSHFT E   &kp I   &kp O       &kp SQT
     &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp PSCRN    &kp C_VOL_DN   /**/    &kp C_VOL_UP    &out OUT_TOG    &kp K           &kp M           &kp COMMA       &kp DOT &kp FSLH    &kp CAPS
-                                            &kp TAB         &lt NUM ESC     &lt NAV SPACE   &kp SPACE    &mo NAV        /**/    &mo FUN         &mt LSHFT BSPC  &lt FUN BSPC    &lt SYM DEL     &kp ENTER
+                                            &kp C_PP        &kp TAB         &mo NUM         &kp SPACE    &mo NAV        /**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
             };
 
