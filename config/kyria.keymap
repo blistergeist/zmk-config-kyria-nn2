@@ -79,6 +79,36 @@
             bindings = <&kp RPAR>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp MINUS>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_under {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp UNDER>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_equal {
+            timeout-ms = <50>;
+            key-positions = <35 36>;
+            bindings = <&kp EQUAL>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_star {
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = <&kp STAR>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_plus {
+            timeout-ms = <50>;
+            key-positions = <36 37>;
+            bindings = <&kp PLUS>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
     };
     behaviors {
         mt_s: ctrl_shift {
