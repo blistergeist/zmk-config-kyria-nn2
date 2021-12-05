@@ -161,13 +161,13 @@
             timeout-ms = <50>;
             key-positions = <30 43>;
             bindings = <&kp LC(F7)>;
-            layers = <AOERAISE>;
+            layers = <AOE AOERAISE>;
         };
         aoe_amil {
             timeout-ms = <50>;
             key-positions = <31 44>;
             bindings = <&kp LC(LS(C))>;
-            layers = <AOERAISE>;
+            layers = <AOE AOERAISE>;
         };
     };
     behaviors {
