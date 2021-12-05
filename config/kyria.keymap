@@ -109,6 +109,67 @@
             bindings = <&kp STAR>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
+        // AOE Combos
+        aoe_grp6 {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp N6>;
+            layers = <AOERAISE>;
+        };
+        aoe_grp7 {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp N7>;
+            layers = <AOERAISE>;
+        };
+        aoe_grp8 {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp N8>;
+            layers = <AOERAISE>;
+        };
+        aoe_grp9 {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&kp N9>;
+            layers = <AOERAISE>;
+        };
+        aoe_agp6 {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp LS(N6)>;
+            layers = <AOERAISE>;
+        };
+        aoe_agp7 {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp LS(N7)>;
+            layers = <AOERAISE>;
+        };
+        aoe_agp8 {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&kp LS(N8)>;
+            layers = <AOERAISE>;
+        };
+        aoe_agp9 {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp LS(N9)>;
+            layers = <AOERAISE>;
+        };
+        aoe_avil {
+            timeout-ms = <50>;
+            key-positions = <30 43>;
+            bindings = <&kp LC(F7)>;
+            layers = <AOERAISE>;
+        };
+        aoe_amil {
+            timeout-ms = <50>;
+            key-positions = <31 44>;
+            bindings = <&kp LC(LS(C))>;
+            layers = <AOERAISE>;
+        };
     };
     behaviors {
         mt_s: ctrl_shift {
@@ -176,10 +237,10 @@
 //                     |      |      |      |    |    |  |  - |  0 | ADJ/.|       |       |
 
         bindings = <
-    &none   &none   &none   &none       &none       &none                   /**/                        &kp PLUS        &kp N7  &kp N8  &kp N9  &kp STAR    &none
-    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                        &kp EQUAL       &kp N4  &kp N5  &kp N6  &kp PIPE    &none
-    &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none       &none   &kp MINUS       &kp N1  &kp N2  &kp N3  &kp BSLH    &none
-                            &none       &trans      &none   &none   &none   /**/    &kp MINUS   &kp N0  &lt ADJUST DOT  &none   &none
+    &none   &none   &none   &none       &none       &none                   /**/                    &none       	&kp N7  &kp N8  &kp N9  &kp STAR    &none
+    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                    &none       	&kp N4  &kp N5  &kp N6  &kp PIPE    &none
+    &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none   &none   &none       	&kp N1  &kp N2  &kp N3  &kp BSLH    &none
+                            &none       &trans      &none   &none   &none   /**/    &none	&kp N0  &lt ADJUST DOT  &none   &none
                         >;
             };
 
@@ -188,13 +249,13 @@
 // |       |     |     |      |      |      |                      |      |   [   |   ]   |  {   |   }   |      |
 // |       |     |     |      |      |      |                      |      |  LEFT |  DOWN |  UP  | RIGHT |      |
 // |       |     |     |      |      |      |    |    |  |    |    |      |  HOME |  PGDN | PGUP |  END  |      |
-//                     |      |      |      |    |    |  |    |  ( | ADJ/)|       |       |      |
+//                     |      |      |      |    |    |  |    |    | ADJ  |       |       |      |
 
         bindings = <
-    &none   &none   &none   &none       &none       &none                   /**/                        &none           &kp LBKT    &kp RBKT    &kp LBRC    &kp RBRC    &none
-    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                        &none           &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
-    &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none    &none      &none           &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
-                            &none       &none       &trans  &none   &none   /**/    &none    &kp LPAR   &lt ADJUST RPAR &none       &none
+    &none   &none   &none   &none       &none       &none                   /**/                    &none       &kp LBKT    &kp RBKT    &kp LBRC    &kp RBRC    &none
+    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                    &none       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
+    &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none    &none  &none       &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
+                            &none       &none       &trans  &none   &none   /**/    &none    &none	&mo ADJUST	&none       &none
                         >;
             };
 
@@ -230,30 +291,30 @@
 
             aoe {
 // -----------------------------------------------  -----------------------------------------------
-// | ESC |  Q  |  W  |  E  |  R  |  T  |                      |  Y  |  U  |  I  |  O  |  P  | BSPC|
+// | CTRL|  Q  |  W  |  E  |  R  |  T  |                      |  Y  |  U  |  I  |  O  |  P  | BSPC|
 // | ALT |  A  |  S  |  D  |  F  |  G  |                      |  H  |  J  |  K  |  L  |  ;  |  '  |
-// | CTRL|  Z  |  X  |  C  |  V  |  B  |    |    |  |    |    |  N  |  M  |  ,  |  .  |  /  | CAPS|
-//                   | TAB | AOER|SH/SP|    |    |  |    |    |LSHFT| XXX |ENTER|
+// |  H  |  Z  |  X  |  C  |  V  |  B  | F7 | F8 |  |    |    |  N  |  M  |  ,  |  .  |  /  | CAPS|
+//                   |     | TAB | ESC | SPC| SFT|  |    |    |LSHFT| XXX |ENTER|
 
         bindings = <
     &kp LCTRL   &kp Q   &kp W   &kp E   &kp R   &kp T                                       /**/                            &kp Y   &kp U       &kp I       &kp O   &kp P       &kp BSPC
     &kp LALT    &kp A   &kp S   &kp D   &kp F   &kp G                                       /**/                            &kp H   &kp J       &kp K       &kp L   &kp SEMI    &kp SQT
-    &kp H       &kp Z   &kp X   &kp C   &kp V   &kp B               &kp F7      &none       /**/    &none   &none           &kp N   &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp CAPS
-                                &kp F5  &kp TAB &lt AOERAISE ESC    &kp SPACE   &kp LSHFT   /**/    &none   &mt LSHFT BSPC  &kp DEL &kp ENTER   &none
+    &kp H       &kp Z   &kp X   &kp C   &kp V   &kp B               &kp F7      &kp F8      /**/    &none   &none           &kp N   &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp CAPS
+                                &none   &kp TAB &lt AOERAISE ESC    &kp SPACE   &kp LSHFT   /**/    &none   &mt LSHFT BSPC  &kp DEL &kp ENTER   &none
                     >;
             };
             aoeraise {
 // -----------------------------------------------  -----------------------------------------------
 // |  0  |  1  |  2  |  3  |  4  |  5  |                      |     |     |     |     |     |     |
 // |LS(0)|LS(1)|LS(2)|LS(3)|LS(4)|LS(5)|                      |     |     |     |     |     |     |
-// |SC(G)|SC(Q)|SC(W)|SC(E)|SC(R)|SC(T)|    |    |  |    |    |     |     |     |     |     |     |
+// | F6  |  F1 |  F2 |  F3 |  F4 |  F5 | F9 |    |  |    |    |     |     |     |     |     |     |
 //                   |     |     |     |    |    |  |    |    |     | ADJ |     |
 
         bindings = <
     &kp N0      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                      /**/                    &trans      &trans  &trans  &trans  &trans  &trans
     &kp LS(N0)  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  /**/                    &trans      &trans  &trans  &trans  &trans  &trans
-    &kp F6   	&kp F1   	&kp F2   	&kp F3		&kp F4		&kp F5   	&none	&none	/**/    &none   &none   &trans      &trans  &trans  &trans  &trans  &trans
-                                        &trans      &trans      &trans  	&none   &none  	/**/    &none   &none   &mo ADJUST  &trans  &none
+    &kp F6      &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F9  &none   /**/    &none   &none   &trans      &trans  &trans  &trans  &trans  &trans
+                                        &trans      &trans      &trans      &none   &none   /**/    &none   &none   &mo ADJUST  &trans  &none
                     >;
             };
             mine {
