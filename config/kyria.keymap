@@ -31,10 +31,10 @@
         //     key-positions = <21 22>;
         //     bindings = <&kp SQT>;
         //     layers = <QWERTY COLEMAK>; 
-        combo_alt_l {
+        combo_shift_l {
             timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LALT>;
+            key-positions = <14 15>;
+            bindings = <&kp LSHFT>;
         };
         combo_gui_l {
             timeout-ms = <50>;
@@ -48,10 +48,10 @@
             bindings = <&kp LGUI>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
-        combo_alt_r {
+        combo_shift_r {
             timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp LALT>;
+            key-positions = <20 21>;
+            bindings = <&kp LSHFT>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_esc {
@@ -205,7 +205,7 @@
 
         bindings = <
     &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		/**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &mt_l LC(O) O   &kp P       &none
-    &none   &mt_l LC(A) A   &mt_l LC(S) S   &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &mt_s LSHFT K   &kp L           &kp SEMI    &kp SQT
+    &none   &mt_l LC(A) A   &mt_l LALT S    &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &mt_s LSHFT K   &mt_l LALT L    &kp SEMI    &kp SQT
     &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &none       &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &out OUT_TOG    &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT         &kp FSLH    &kp CAPS
                                             &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
