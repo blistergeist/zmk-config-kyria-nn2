@@ -35,6 +35,13 @@
             timeout-ms = <50>;
             key-positions = <14 15>;
             bindings = <&kp LSHFT>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_shift_r {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp LSHFT>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_gui_l {
             timeout-ms = <50>;
@@ -48,13 +55,7 @@
             bindings = <&kp LGUI>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
-        combo_shift_r {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&kp LSHFT>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
-        combo_esc {
+        combo_esc {""
             timeout-ms = <50>;
             key-positions = <30 43>;
             bindings = <&kp ESC>;
