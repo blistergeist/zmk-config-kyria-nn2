@@ -31,18 +31,18 @@
         //     key-positions = <21 22>;
         //     bindings = <&kp SQT>;
         //     layers = <QWERTY COLEMAK>; 
-        combo_shift_l {
-            timeout-ms = <50>;
-            key-positions = <14 15>;
-            bindings = <&kp LSHFT>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
-        combo_shift_r {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&kp LSHFT>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
+        // combo_shift_l {
+        //     timeout-ms = <50>;
+        //     key-positions = <14 15>;
+        //     bindings = <&kp LSHFT>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_shift_r {
+        //     timeout-ms = <50>;
+        //     key-positions = <20 21>;
+        //     bindings = <&kp LSHFT>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
         combo_gui_l {
             timeout-ms = <50>;
             key-positions = <13 14>;
@@ -55,18 +55,18 @@
             bindings = <&kp LGUI>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <30 43>;
-            bindings = <&kp ESC>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
-        combo_prsc {
-            timeout-ms = <50>;
-            key-positions = <31 44>;
-            bindings = <&kp PSCRN>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
+        // combo_esc {
+        //     timeout-ms = <50>;
+        //     key-positions = <30 43>;
+        //     bindings = <&kp ESC>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_prsc {
+        //     timeout-ms = <50>;
+        //     key-positions = <31 44>;
+        //     bindings = <&kp PSCRN>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
         combo_lpar {
             timeout-ms = <50>;
             key-positions = <7 8>;
@@ -205,10 +205,10 @@
 //                              |     |    | NAV|  |    | BSP| DEL |
 
         bindings = <
-    &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		/**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &mt_l LC(O) O   &kp P       &none
-    &none   &mt_l LC(A) A   &mt_l LALT S    &kp D           &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &kp K           &mt_l LALT L    &kp SEMI    &kp SQT
-    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &none       &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &out OUT_TOG    &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT         &kp FSLH    &kp CAPS
-                                            &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
+    &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		    /**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &mt_l LC(O) O   &kp P       &none
+    &none   &mt_l LC(A) A   &mt_l LALT S    &kp D           &mt_s LCTRL F   &kp G                               		    /**/                                    &kp H           &mt_s LCTRL J   &kp K           &mt_l LALT L    &kp SEMI    &kp SQT
+    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp ESC         &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &kp PSCRN       &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT         &kp FSLH    &kp CAPS
+                                            &kp C_PP        &kp TAB         &mo NUM         &mt LSHFT SPACE &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
             };
 
@@ -222,10 +222,10 @@
 //                              |     | SPC | NAV|  | FUN| BSP| DEL |
 
         bindings = <    
-    &none   &kp Q           &mt_l LC(W) W   &kp F           &kp P           &kp G                                       /**/                                    &kp J           &kp L           &kp U       &kp Y   &kp SEMI    &none
-    &none   &kp A           &kp R           &kp S           &mt_s LCTRL T   &kp D                                       /**/                                    &kp H           &mt_s LCTRL N   &kp E       &kp I   &kp O       &kp SQT
-    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &none       &kp C_VOL_DN    /**/    &kp C_VOL_UP    &out OUT_TOG    &kp K           &kp M           &kp COMMA   &kp DOT &kp FSLH    &kp CAPS
-                                            &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV         /**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
+    &none   &kp Q           &mt_l LC(W) W   &kp F           &kp P           &kp G                                           /**/                                    &kp J           &kp L           &kp U       &kp Y   &kp SEMI    &none
+    &none   &kp A           &kp R           &kp S           &mt_s LCTRL T   &kp D                                           /**/                                    &kp H           &mt_s LCTRL N   &kp E       &kp I   &kp O       &kp SQT
+    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp ESC         &kp C_VOL_DN    /**/    &kp C_VOL_UP    &kp PSCRN       &kp K           &kp M           &kp COMMA   &kp DOT &kp FSLH    &kp CAPS
+                                            &kp C_PP        &kp TAB         &mo NUM         &mt LSHFT SPACE &mo NAV         /**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
             };
 
