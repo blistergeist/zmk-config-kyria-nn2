@@ -69,27 +69,22 @@
         // };
         combo_lpar {
             timeout-ms = <50>;
-            key-positions = <7 8>;
+            key-positions = <25 26>;
             bindings = <&kp LPAR>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_rpar {
             timeout-ms = <50>;
-            key-positions = <9 10>;
+            key-positions = <27 28>;
             bindings = <&kp RPAR>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_minus {
             timeout-ms = <50>;
-            key-positions = <27 28>;
+            key-positions = <26 27>;
             bindings = <&kp MINUS>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
-        combo_under {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            bindings = <&kp UNDER>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_plus {
             timeout-ms = <50>;
