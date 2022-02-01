@@ -85,7 +85,6 @@
             bindings = <&kp MINUS>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
-        };
         combo_plus {
             timeout-ms = <50>;
             key-positions = <35 36>;
