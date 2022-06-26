@@ -26,88 +26,88 @@
 / {
     combos {
         compatible = "zmk,combos";
-        // combo_quote {
+         combo_semi {
+             timeout-ms = <50>;
+             key-positions = <21 22>;
+             bindings = <&kp SEMI>;
+             layers = <QWERTY COLEMAK>; 
+        // combo_alt_l {
         //     timeout-ms = <50>;
-        //     key-positions = <21 22>;
-        //     bindings = <&kp SQT>;
-        //     layers = <QWERTY COLEMAK>; 
-        combo_alt_l {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LALT>;
-        };
+        //     key-positions = <12 13>;
+        //     bindings = <&kp LALT>;
+        // };
         combo_gui_l {
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&kp LGUI>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
-        combo_gui_r {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp LGUI>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
-        combo_alt_r {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp LALT>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
+        // combo_gui_r {
+        //     timeout-ms = <50>;
+        //     key-positions = <21 22>;
+        //     bindings = <&kp LGUI>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_alt_r {
+        //     timeout-ms = <50>;
+        //     key-positions = <22 23>;
+        //     bindings = <&kp LALT>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <30 43>;
+            key-positions = <1 2>;
             bindings = <&kp ESC>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_prsc {
             timeout-ms = <50>;
-            key-positions = <31 44>;
+            key-positions = <29 30>;
             bindings = <&kp PSCRN>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_lpar {
             timeout-ms = <50>;
-            key-positions = <7 8>;
+            key-positions = <27 28>;
             bindings = <&kp LPAR>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_rpar {
             timeout-ms = <50>;
-            key-positions = <9 10>;
+            key-positions = <31 32>;
             bindings = <&kp RPAR>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
-        combo_minus {
-            timeout-ms = <50>;
-            key-positions = <27 28>;
-            bindings = <&kp MINUS>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
-        combo_under {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            bindings = <&kp UNDER>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
-        combo_plus {
-            timeout-ms = <50>;
-            key-positions = <35 36>;
-            bindings = <&kp PLUS>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
-        combo_equal {
-            timeout-ms = <50>;
-            key-positions = <36 37>;
-            bindings = <&kp EQUAL>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
-        combo_star {
-            timeout-ms = <50>;
-            key-positions = <37 38>;
-            bindings = <&kp STAR>;
-            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
-        };
+        // combo_minus {
+        //     timeout-ms = <50>;
+        //     key-positions = <27 28>;
+        //     bindings = <&kp MINUS>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_under {
+        //     timeout-ms = <50>;
+        //     key-positions = <25 26>;
+        //     bindings = <&kp UNDER>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_plus {
+        //     timeout-ms = <50>;
+        //     key-positions = <35 36>;
+        //     bindings = <&kp PLUS>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_equal {
+        //     timeout-ms = <50>;
+        //     key-positions = <36 37>;
+        //     bindings = <&kp EQUAL>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_star {
+        //     timeout-ms = <50>;
+        //     key-positions = <37 38>;
+        //     bindings = <&kp STAR>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
         // AOE Combos
         aoe_grp6 {
             timeout-ms = <50>;
@@ -200,12 +200,12 @@
 // |    |  Q  |  W  |  E  |  R  |  T  |                      |  Y  |  U  |  I  |  O  |  P  |      |
 // |    |  A  |  S  |  D  |  F  |  G  |                      |  H  |  J  |  K  |  L  |  ;  |  '   |
 // |    |  Z  |  X  |  C  |  V  |  B  |    | VDN|  | VUP| OUT|  N  |  M  |  ,  |  .  |  /  | CAPS |
-//                  |  PP | TAB | NUM | SPC|    |  | FUN| SFT| SYM | ENT | MUTE|
-//                              |     |    | NAV|  |    | BSP| DEL |
+//                  |  PP | TAB | NUM | SPC| NAV|  | FUN| SFT| SYM | ENT | MUTE|
+//                              |     |    |    |  |    | BSP| DEL |
 
         bindings = <
     &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		/**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &mt_l LC(O) O   &kp P       &none
-    &none   &mt_l LC(A) A   &mt_l LC(S) S   &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &mt_s LSHFT K   &kp L           &kp SEMI    &kp SQT
+    &none   &mt_l LC(A) A   &mt_l LC(S) S   &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &mt_s LSHFT K   &kp L           &kp SQT    	&none
     &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &none       &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &out OUT_TOG    &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT         &kp FSLH    &kp CAPS
                                             &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
@@ -236,9 +236,9 @@
 //                     |      |      |      |    |    |  |  - |  0 | ADJ/.|       |       |
 
         bindings = <
-    &none   &none   &none   &none       &none       &none                   /**/                    &none       	&kp N7  &kp N8  &kp N9  &kp STAR    &none
-    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                    &none       	&kp N4  &kp N5  &kp N6  &kp PIPE    &none
-    &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none   &none   &none       	&kp N1  &kp N2  &kp N3  &kp BSLH    &none
+    &none   &none   &none   &none       &none       &none                   /**/                    &kp PLUS       	&kp N7  &kp N8  &kp N9  &kp STAR    &none
+    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                    &kp MINUS       &kp N4  &kp N5  &kp N6  &kp PIPE    &none
+    &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none   &none   &kp EQAUAL      &kp N1  &kp N2  &kp N3  &kp BSLH    &none
                             &none       &trans      &none   &none   &none   /**/    &none	&kp N0  &lt ADJUST DOT  &none   &none
                         >;
             };
