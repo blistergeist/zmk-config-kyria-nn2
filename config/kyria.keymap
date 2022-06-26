@@ -33,8 +33,25 @@
              layers = <QWERTY COLEMAK>; 
         // combo_alt_l {
         //     timeout-ms = <50>;
+<<<<<<< HEAD
         //     key-positions = <12 13>;
         //     bindings = <&kp LALT>;
+=======
+        //     key-positions = <21 22>;
+        //     bindings = <&kp SQT>;
+        //     layers = <QWERTY COLEMAK>; 
+        // combo_shift_l {
+        //     timeout-ms = <50>;
+        //     key-positions = <14 15>;
+        //     bindings = <&kp LSHFT>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_shift_r {
+        //     timeout-ms = <50>;
+        //     key-positions = <20 21>;
+        //     bindings = <&kp LSHFT>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+>>>>>>> a3a0680ecbacc6a83b19ac0a5ff0d49e23bbc226
         // };
         combo_gui_l {
             timeout-ms = <50>;
@@ -42,6 +59,7 @@
             bindings = <&kp LGUI>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
+<<<<<<< HEAD
         // combo_gui_r {
         //     timeout-ms = <50>;
         //     key-positions = <21 22>;
@@ -69,11 +87,35 @@
         combo_lpar {
             timeout-ms = <50>;
             key-positions = <27 28>;
+=======
+        combo_gui_r {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp LGUI>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        // combo_esc {
+        //     timeout-ms = <50>;
+        //     key-positions = <30 43>;
+        //     bindings = <&kp ESC>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        // combo_prsc {
+        //     timeout-ms = <50>;
+        //     key-positions = <31 44>;
+        //     bindings = <&kp PSCRN>;
+        //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        // };
+        combo_lpar {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+>>>>>>> a3a0680ecbacc6a83b19ac0a5ff0d49e23bbc226
             bindings = <&kp LPAR>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         };
         combo_rpar {
             timeout-ms = <50>;
+<<<<<<< HEAD
             key-positions = <31 32>;
             bindings = <&kp RPAR>;
             layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
@@ -108,6 +150,36 @@
         //     bindings = <&kp STAR>;
         //     layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
         // };
+=======
+            key-positions = <27 28>;
+            bindings = <&kp RPAR>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp MINUS>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_plus {
+            timeout-ms = <50>;
+            key-positions = <35 36>;
+            bindings = <&kp PLUS>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_equal {
+            timeout-ms = <50>;
+            key-positions = <36 37>;
+            bindings = <&kp EQUAL>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+        combo_star {
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = <&kp STAR>;
+            layers = <QWERTY COLEMAK NUM NAV SYM FUN>;
+        };
+>>>>>>> a3a0680ecbacc6a83b19ac0a5ff0d49e23bbc226
         // AOE Combos
         aoe_grp6 {
             timeout-ms = <50>;
@@ -173,7 +245,7 @@
     behaviors {
         mt_s: ctrl_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_CTRL_SHIFT";
+            label = "MODTAP_SHORT";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             quick_tap_ms = <0>;
@@ -182,7 +254,7 @@
         };
         mt_l: alt_gui {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_ALT_GUI";
+            label = "MODTAP_LONG";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             quick_tap_ms = <0>;
@@ -204,10 +276,17 @@
 //                              |     |    |    |  |    | BSP| DEL |
 
         bindings = <
+<<<<<<< HEAD
     &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		/**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &mt_l LC(O) O   &kp P       &none
     &none   &mt_l LC(A) A   &mt_l LC(S) S   &mt_s LSHFT D   &mt_s LCTRL F   &kp G                               		/**/                                    &kp H           &mt_s LCTRL J   &mt_s LSHFT K   &kp L           &kp SQT    	&none
     &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &none       &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &out OUT_TOG    &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT         &kp FSLH    &kp CAPS
                                             &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
+=======
+    &none   &kp Q           &mt_l LC(W) W   &kp E           &mt_l LC(R) R   &mt_l LC(T) T                       		        /**/                                    &kp Y           &mt_l LC(U) U   &mt_l LC(I) I   &mt_l LC(O) O   &kp P       &none
+    &none   &mt_l LC(A) A   &mt_l LALT S    &kp D           &mt_s LCTRL F   &kp G                               		        /**/                                    &kp H           &mt_s LCTRL J   &kp K           &mt_l LALT L    &kp SEMI    &kp SQT
+    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp ESC             &kp C_VOL_DN  	/**/    &kp C_VOL_UP    &kp PSCRN       &mt_l LC(N) N   &kp M           &kp COMMA       &kp DOT         &kp FSLH    &kp CAPS
+                                            &kp C_PP        &kp TAB         &mo NUM         &mt_s LSHFT SPACE   &mo NAV 		/**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
+>>>>>>> a3a0680ecbacc6a83b19ac0a5ff0d49e23bbc226
                         >;
             };
 
@@ -221,10 +300,10 @@
 //                              |     | SPC | NAV|  | FUN| BSP| DEL |
 
         bindings = <    
-    &none   &kp Q           &mt_l LC(W) W   &kp F           &kp P           &kp G                                       /**/                                    &kp J           &kp L           &kp U           &kp Y   &kp SEMI    &none
-    &none   &kp A           &kp R           &mt_s LSHFT S   &mt_s LCTRL T   &kp D                                       /**/                                    &kp H           &mt_s LCTRL N   &mt_s LSHFT E   &kp I   &kp O       &kp SQT
-    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &none       &kp C_VOL_DN    /**/    &kp C_VOL_UP    &out OUT_TOG    &kp K           &kp M           &kp COMMA       &kp DOT &kp FSLH    &kp CAPS
-                                            &kp C_PP        &kp TAB         &mo NUM         &kp SPACE   &mo NAV         /**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
+    &none   &kp Q           &mt_l LC(W) W   &kp F           &kp P           &kp G                                               /**/                                    &kp J           &kp L           &kp U       &kp Y   &kp SEMI    &none
+    &none   &kp A           &kp R           &kp S           &mt_s LCTRL T   &kp D                                               /**/                                    &kp H           &mt_s LCTRL N   &kp E       &kp I   &kp O       &kp SQT
+    &none   &mt_l LC(Z) Z   &mt_l LC(X) X   &mt_l LC(C) C   &mt_l LC(V) V   &mt_l LC(B) B   &kp ESC             &kp C_VOL_DN    /**/    &kp C_VOL_UP    &kp PSCRN       &kp K           &kp M           &kp COMMA   &kp DOT &kp FSLH    &kp CAPS
+                                            &kp C_PP        &kp TAB         &mo NUM         &mt_s LSHFT SPACE   &mo NAV         /**/    &mo FUN         &mt LSHFT BSPC  &lt SYM DEL     &kp ENTER       &kp C_MUTE
                         >;
             };
 
@@ -236,10 +315,17 @@
 //                     |      |      |      |    |    |  |  - |  0 | ADJ/.|       |       |
 
         bindings = <
+<<<<<<< HEAD
     &none   &none   &none   &none       &none       &none                   /**/                    &kp PLUS       	&kp N7  &kp N8  &kp N9  &kp STAR    &none
     &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                    &kp MINUS       &kp N4  &kp N5  &kp N6  &kp PIPE    &none
     &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none   &none   &kp EQAUAL      &kp N1  &kp N2  &kp N3  &kp BSLH    &none
                             &none       &trans      &none   &none   &none   /**/    &none	&kp N0  &lt ADJUST DOT  &none   &none
+=======
+    &none   &none       &none       &none       &none       &none                   /**/                    &none       	&kp N7  &kp N8  &kp N9  &kp STAR    &none
+    &none   &kp LGUI    &kp LALT    &kp LSHFT   &kp LCTRL   &none                   /**/                    &none       	&kp N4  &kp N5  &kp N6  &kp PIPE    &none
+    &none   &none       &none       &none       &none       &none   &none   &none   /**/    &none   &none   &none       	&kp N1  &kp N2  &kp N3  &kp BSLH    &none
+                                    &none       &trans      &none   &none   &none   /**/    &none	&kp N0  &lt ADJUST DOT  &none   &none
+>>>>>>> a3a0680ecbacc6a83b19ac0a5ff0d49e23bbc226
                         >;
             };
 
@@ -251,10 +337,10 @@
 //                     |      |      |      |    |    |  |    |    | ADJ  |       |       |      |
 
         bindings = <
-    &none   &none   &none   &none       &none       &none                   /**/                    &none       &kp LBKT    &kp RBKT    &kp LBRC    &kp RBRC    &none
-    &none   &none   &none   &kp LSHFT   &kp LCTRL   &none                   /**/                    &none       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
-    &none   &none   &none   &none       &none       &none   &none   &none   /**/    &none    &none  &none       &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
-                            &none       &none       &trans  &none   &none   /**/    &none    &none	&mo ADJUST	&none       &none
+    &none   &none       &none       &none       &none       &none                   /**/                    &none       &kp LBKT    &kp RBKT    &kp LBRC    &kp RBRC    &none
+    &none   &kp LGUI    &kp LALT    &kp LSHFT   &kp LCTRL   &none                   /**/                    &none       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
+    &none   &none       &none       &none       &none       &none   &none   &none   /**/    &none    &none  &none       &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none
+                                    &none       &none       &trans  &none   &none   /**/    &none    &none	&mo ADJUST	&none       &none
                         >;
             };
 
@@ -266,9 +352,9 @@
 //                     |      |      |      |    |    |  |    |    |      |       |       |
 
         bindings = <
-    &none   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT                   /**/                    &none   &none       &none       &none   &none   &none
-    &none   &kp CARET   &kp AMPS    &kp UNDER   &kp GRAVE   &kp TILDE                   /**/                    &none   &kp LCTRL   &kp LSHFT   &none   &none   &none
-    &none   &none       &none       &none       &none       &none       &none    &none  /**/    &none    &none  &none   &none       &none       &none   &none   &none
+    &none   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT                   /**/                    &none   &none       &none       &none       &none       &none
+    &none   &kp CARET   &kp AMPS    &kp UNDER   &kp GRAVE   &kp TILDE                   /**/                    &none   &kp LCTRL   &kp LSHFT   &kp LALT    &kp LGUI    &none
+    &none   &none       &none       &none       &none       &none       &none    &none  /**/    &none    &none  &none   &none       &none       &none       &none       &none
                                     &none       &none       &mo ADJUST  &none    &none  /**/    &none    &none  &trans  &none       &none
                         >;
             };
@@ -281,9 +367,9 @@
 //                     |      |      |      |    |    |  |    |    |      |       |       |
 
         bindings = <
-    &none   &kp F1  &kp F2  &kp F3  &kp F4  &none                       /**/                    &none   &none       &none       &none   &none   &none
-    &none   &kp F5  &kp F6  &kp F7  &kp F8  &none                       /**/                    &none   &kp LCTRL   &kp LSHFT   &none   &none   &none
-    &none   &kp F9  &kp F10 &kp F11 &kp F12 &none       &none   &none   /**/    &none    &none  &none   &none       &none       &none   &none   &none
+    &none   &kp F1  &kp F2  &kp F3  &kp F4  &none                       /**/                    &none   &none       &none       &none       &none       &none
+    &none   &kp F5  &kp F6  &kp F7  &kp F8  &none                       /**/                    &none   &kp LCTRL   &kp LSHFT   &kp LALT    &kp LGUI    &none
+    &none   &kp F9  &kp F10 &kp F11 &kp F12 &none       &none   &none   /**/    &none    &none  &none   &none       &none       &none       &none       &none
                             &none   &none   &mo ADJUST  &none   &none   /**/    &none    &none  &trans  &none       &none
                         >;
             };
